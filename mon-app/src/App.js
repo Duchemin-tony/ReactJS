@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {PureCompo, PureCompoProps} from './components/PureCompo';
+import StateCompo from './components/StateCompo';
 
 function App() {
   return (
@@ -10,6 +12,19 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
+        <StateCompo  label={"Tony"} />
+        <PureCompo/>
+        <PureCompoProps label={"Tony"} age={"29"} />
+
+
+
+
+
+
+
+
+
         <a
           className="App-link"
           href="https://reactjs.org"

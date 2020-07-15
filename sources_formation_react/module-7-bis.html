@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Module 7</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> 
+  </head>
+  <body>
+   
+    <script type='text/babel'>
+        //var name = "toto";
+        let name = "mike";
+        name = "Tony";
+        
+        const KEY = "DFLKDKGLDFKGLD";
+       // KEY = "nouvellekey";
+
+        class Vehicule {
+            constructor(model,annee){
+                this.model = model;
+                this.annee = annee;
+            }
+        }
+
+        class Voiture extends Vehicule {
+            constructor(model,annee,color){
+               super(model,annee);
+               this.color = color;
+            }
+            updateAnnee(annee){
+                this.annee = annee;
+            }
+        }
+
+        const maVoiture = new Voiture("twingo",2015,"bleur")
+        console.log("maVoiture",maVoiture.annee)
+        maVoiture.updateAnnee(2000)
+        console.log("maVoiture",maVoiture.annee)
+
+        function maFonction(x, vistesslumiere = 300000){
+            console.log("x vaut" + x + " vistesslumiere vaut " + vistesslumiere)
+        }
+        maFonction(6,1000);
+
+      /*  import * as math from 'math';
+        console.log(math.multiplier(3x2))
+        console.log("pi vaut " + math.pi)
+
+        import {multiplier,pi} from 'math';
+        console.log(multiplier(3x2))
+        console.log("pi vaut " + pi)*/
+
+        //
+        function multiplier(x,y){
+            console.log("multiplier " + x*y)
+        }
+        con
+
+        let mul = (x,y) => {console.log("multiplier " + x*y)}
+        multiplier(3,6)
+        mul(3,6)
+       
+
+        function Personne (){
+            this.age = 10;
+           /* setInterval(function grandir(){
+                this.age++;
+                console.log("this.age",this.age)
+            },1000);*/
+
+           /* setInterval(function grandir(){
+                this.age++;
+                console.log("this.age",this.age)
+            }.bind(this),1000);*/
+
+            setInterval(() => {this.age++;console.log("this.age",this.age)
+            }, 1000000);
+        }
+
+        let p = new Personne();
+        console.log(p);
+        //console.log("this vaut", this);
+
+        function callbackSucess(msg){
+            console.log("Operation reussi : message "+msg)
+        }
+        function callbackError(msg){
+            console.log("Operation ERROR : message "+msg)
+        }
+
+        function funcALancienne(callbackSucess,callbackError){
+            if (Math.random() > .5){
+                callbackSucess("sucess")
+            } else {
+                callbackError("Error")
+            }
+        }
+
+      /*  funcALancienne(callbackSucess,callbackError)
+        funcALancienne(callbackSucess,callbackError)
+        funcALancienne(callbackSucess,callbackError)
+        funcALancienne(callbackSucess,callbackError)
+        funcALancienne(callbackSucess,callbackError)
+*/
+        function faireQQche(){
+            return new Promise((resolve,reject)=>{
+                if (Math.random() > .5){
+                    resolve("sucess")
+                } else {
+                    reject("Error")
+                }
+            })
+        }
+
+    faireQqc()
+      .then(result => faireAutreChose(result))
+      .then(newResult => faireUnTroisiemeTruc(newResult))
+      .then(finalResult => {
+        console.log('Résultat final : ' + finalResult);
+      })
+      .catch(failureCallback);
+    </script>
+
+    
+  
+  </body>
+</html>

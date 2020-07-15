@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React 5 min</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+   
+    <script type="text/babel">
+
+    function ComposentSimpleH6(){
+        return (
+            <div>
+                <h6>pure compo h6</h6>
+            </div>
+        );
+    }
+
+    function HelloWord({label ,age}){
+        return (
+            <div>
+                <h6>Hello {label} tu as {age} ans</h6>
+                <ComposentSimpleH6> </ComposentSimpleH6>
+            </div>
+        );
+    }
+
+    class MonCompoMike extends React.Component {
+        render(){
+            return (
+                <div>
+                    hello {this.props.label} {this.props.age}
+                </div>
+            )
+        }
+    }
+
+    
+    ReactDOM.render(
+        <div>
+            <HelloWord label={"Mike"} age="21"/>
+            <HelloWord label={"John"} age="25"/>
+            <MonCompoMike age="25" label={"John"} />
+        </div>,
+        document.getElementById("root")
+    );
+   
+    
+    </script>
+       
+       
+  </body>
+</html>

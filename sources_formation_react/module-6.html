@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React 5 min</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+    
+  
+    <script type="text/babel">
+        function CompoA(){
+            return (<div>a</div>)
+        }
+
+        const elt = <h1>Hello</h1>;
+        const elt2 = <h1>Hello2<CompoA/></h1>;
+        const x = 2;
+        let affichage ;
+
+        function CompoSimple(){
+            if (x === 2) {
+                affichage = elt2;
+            } else {
+                affichage = elt;
+            }
+
+            return (
+                <div>{affichage}</div>
+            )
+        }
+
+        const MonComposant = {
+            Carrousel : function Carrousel(props){
+                return(<div>imagine caroussel de couleur {props.color}</div>)
+            }
+        }
+
+        function CarrouselBleu(){
+            return <MonComposant.Carrousel color="bleu" />;
+        }
+        function CarrouselRouge(){
+            return <MonComposant.Carrousel color="rouge" />;
+        }
+
+        function ComposentAP(props){
+            return (<div>Hello {props.nom} {props.prenom}</div>)
+        }
+
+
+
+
+        function ComposentA({nom, prenom, age}){
+            return (<div>Hello {nom} {prenom} {age}</div>)
+        }
+
+        function ComposentB(props){
+            return (<div>
+                        <h1></h1>
+                        <ComposentA {...props}></ComposentA>
+                    </div>)
+        }
+
+        ReactDOM.render(
+            <ComposentB nom="mike" prenom="toto" age="21"></ComposentB>,
+            document.getElementById('root')
+        );
+    </script>
+
+
+    <script type='text/javascript'>
+        var h = document.createElement('h1');
+      //  var t = document.createTextNode('Hello world');
+        //h.appendChild(t);
+       // document.body.appendChild(h);
+
+       //var elt = <h1>Hello</h1>;
+    </script>
+
+       
+  </body>
+</html>

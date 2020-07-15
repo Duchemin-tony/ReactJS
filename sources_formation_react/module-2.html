@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Module 2 rappel</title>
+  </head>
+
+  <body>
+    <h1>Rappel </h1>
+    <div id="root"></div>
+    <script type='text/javascript'>
+        var name = "Mike";
+        var age = 21;
+        var book = [];
+        var book = {};
+        console.log("name " + name)
+
+        function maFonction(ageparam){
+           var chaine = "age " + ageparam;
+            return chaine;
+        }
+        var a = maFonction(20);
+        console.log("a",a);
+
+        var monH2 = document.createElement("h2");
+        monH2.innerText = "Mon H2";
+
+        document.getElementById("root").appendChild(monH2)
+
+        var monArray = [];
+        monArray.push("a");
+        monArray.push("b");
+        monArray.push("c");
+        monArray.push("d");
+        console.log(monArray);
+
+        for (var i=0; i<monArray.length ; i++) {
+            var ar = monArray[i];
+            monArray[i] = "i vaut" + i
+           // console.log("ar vaut " + ar)
+        }
+        console.log("monArray vaut " + monArray)
+        var monObj = {
+            nom : "mike",
+            age : 50
+        };
+        console.log("monObj vaut " , monObj)
+        console.log("nom vaut " , monObj.nom)
+
+        monObj.nom = "toto"
+        console.log("nom vaut " , monObj.nom)
+    </script>
+
+  
+  </body>
+</html>
